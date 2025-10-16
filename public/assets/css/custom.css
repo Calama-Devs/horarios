@@ -1,0 +1,177 @@
+/*Customização dos botoes de edição, gerenciamento e exclusão de itens da listagem*/
+.button-trans-success {
+  background-color: rgba(0, 210, 91, 0.2);
+  transition: background-color 0.3s;
+}
+
+.button-trans-success:hover {
+  background-color: rgba(0, 210, 91, 1);
+}
+
+.button-trans-success > i {
+  color: #00d25b;
+  transition: color 0.3s;
+}
+
+.button-trans-success:hover > i {
+  color: #ffffff;
+}
+
+.button-trans-info {
+  background-color: rgba(143, 95, 232, 0.2);
+  transition: background-color 0.3s;
+}
+
+.button-trans-info:hover {
+  background-color: rgba(143, 95, 232, 1);
+}
+
+.button-trans-info > i {
+  color: #8f5fe8;
+  transition: color 0.3s;
+}
+
+.button-trans-info:hover > i {
+  color: #ffffff;
+}
+
+.button-trans-danger {
+  background-color: rgba(252, 66, 74, 0.2);
+  transition: background-color 0.3s;
+}
+
+.button-trans-danger:hover {
+  background-color: rgba(252, 66, 74, 1);
+}
+
+.button-trans-danger > i {
+  color: #fc424a;
+  transition: color 0.3s;
+}
+
+.button-trans-danger:hover > i {
+  color: #ffffff;
+}
+
+.button-trans-primary {
+  background-color: rgba(0, 136, 204, 0.2);
+  transition: background-color 0.3s;
+}
+
+.button-trans-primary:hover {
+  background-color: rgba(0, 136, 204, 1);
+}
+
+.button-trans-primary>i {
+  color: #0088cc;
+  /* Azul padrão */
+  transition: color 0.3s;
+}
+
+.button-trans-primary:hover>i {
+  color: #ffffff;
+}
+
+.button-trans-warning {
+  background-color: rgba(255, 193, 7, 0.2);
+  /* Amarelo translúcido */
+  transition: background-color 0.3s;
+}
+
+.button-trans-warning:hover {
+  background-color: rgba(255, 193, 7, 1);
+  /* Amarelo sólido */
+}
+
+.button-trans-warning>i {
+  color: #ffc107;
+  /* Amarelo padrão Bootstrap */
+  transition: color 0.3s;
+}
+
+.button-trans-warning:hover>i {
+  color: #ffffff;
+  /* Ícone branco no hover */
+}
+
+/*Estilização para tabelas menores*/
+.button-trans-success,
+.button-trans-danger {
+  margin: 0;
+}
+
+.d-flex .btn-icon {
+  margin-right: 0.3rem;
+  width: 2rem;
+  height: 2rem;
+  ;
+}
+
+.table td,
+.table th {
+  line-height: 1.2;
+  height: auto;
+  padding: 0.3rem 0.5rem;
+}
+
+.select2-container--default .select2-results__option[aria-selected=true] {
+  background-color: #495057 !important;
+  /*Fundo da seleção de opções do select2*/
+}
+
+
+.drop-area {
+  border: 2px dashed #007bff !important;
+  padding: 30px !important;
+  text-align: center !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+  background-color: #1f1f1f !important;
+  color: white !important;
+  transition: background-color 0.2s ease !important;
+}
+.drop-area.dragover {
+  background-color: #2b2b2b !important;
+}
+
+body {
+  background-color: #000;
+}
+
+.custom-error-toast {
+  position: fixed !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+.error-toast-disciplinas {
+  width: 350px !important;
+}
+
+.error-toast-turmas {
+  width: 500px !important;
+}
+
+.error-toast-matrizes {
+  width: 500px !important;
+}
+
+.error-toast-ambientes {
+  width: 600px !important;
+}
+
+.error-toast-professores {
+  width: 400px !important;
+}
+
+.error-toast-tempos-aula {
+  width: 400px !important;
+}
+
+.error-toast-horarios {
+  width: 400px !important;
+}
+
+.error-toast-aulas {
+  width: 400px !important;
+}

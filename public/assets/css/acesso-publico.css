@@ -1,0 +1,93 @@
+.navbar {
+display: none !important;
+}
+
+html,body,.container-scroller {
+    height: 100%;
+    background-color: #191c24 !important;
+    border-top: none !important;
+}
+
+.main-panel {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.main-panel,.content-wrapper {
+    border-top: none !important;
+}
+
+.content-wrapper {
+    flex-grow: 1;
+    background: #191c24; 
+}
+
+/* --- Corrige a cor dos campos Select2 --- */
+.select2-container--default .select2-selection--single {
+    background-color: #2A3038 !important;
+    border: 1px solid #444951 !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #b4b4b4 !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+    border-color: #b4b4b4 transparent transparent transparent !important;
+}
+
+/* Estilos grade de horários  */
+.timetable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+}
+
+.timetable th,
+.timetable td {
+    border: 1px solid #444;
+    padding: 8px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 0.8rem;
+}
+
+.timetable-caption {
+    font-size: 1.1rem;
+    font-weight: bold;
+    background-color: #0090e7;
+    color: white;
+    padding: 8px;
+    border-radius: 4px 4px 0 0;
+    text-align: center;
+}
+
+.timetable thead th {
+    background-color: #2c3038;
+}
+
+.timetable .time-col {
+    font-weight: bold;
+    background-color: #2c3038;
+}
+
+.timetable td .discipline {
+    font-weight: bold;
+    display: block;
+}
+
+.timetable td .details {
+    font-style: normal;
+    display: block;
+margin-top: 4px;
+    color: #aab2b8;
+    font-size: 0.75rem;
+}
+
+.timetable .period-header th {
+    background-color: #0090e7;
+    color: white;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+}
