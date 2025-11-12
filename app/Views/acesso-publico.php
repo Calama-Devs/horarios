@@ -58,96 +58,96 @@ $versaoVigente  = $versoesModel->where('vigente', '1')->first();
                             <button class="nav-link active" id="tab-filtros" data-bs-toggle="tab" data-bs-target="#pane-filtros" type="button" role="tab">Filtros</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="tab-resultados" data-bs-toggle="tab" data-bs-target="#pane-resultados" type="button" role="tab">Resultados</button>
+                            <button class="nav-link" id="tab-resultados" data-bs-toggle="tab" data-bs-target="#resultadosContainer" type="button" role="tab">Resultados</button>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="tab-content" id="tab_horarios_content">
-                <div class="tab-pane fade show active" id="pane-filtros" role="tabpanel">
-                    <div id="aba_filtros" class="tab-pane">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-10 col-md-12 grid-margin stretch-card">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="card-title">Filtros</h4>
-                                        <form id="formFiltros">
-                                            <input type="hidden" class="csrf" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <label for="filtroCurso">Curso</label>
-                                                        <select class="form-control select2-single" id="filtroCurso" name="cursos[]">
-                                                            <option value="">Selecione um curso</option>
-                                                            <?php foreach ($cursos as $curso): ?>
-                                                                <option value="<?= $curso['id'] ?>"><?= esc($curso['nome']) ?></option>
-                                                            <?php endforeach; ?>
-                                                        </select>
-                                                    </div>
-                                                </div>
+            <div class="row tab-content d-flex justify-content-center" id="tab_horarios_content">
+                <div class="tab-pane fade show active row justify-content-center col-lg-10 col-md-12 grid-margin stretch-card" id="pane-filtros" role="tabpanel">
 
-                                                <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <label for="filtroTurma">Turma</label>
-                                                        <select class="form-control select2-single" id="filtroTurma" name="turmas[]" disabled>
-                                                            <option value="">Selecione um curso primeiro</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Filtros</h4>
+                            <form id="formFiltros">
+                                <input type="hidden" class="csrf" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
+                                <div class="row">
+                                    <div class="col-md-3 form-group">
 
-                                                <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <label for="filtroProfessor">Professor</label>
-                                                        <select class="form-control select2-single" id="filtroProfessor" name="professores[]">
-                                                            <option value="">Selecione um professor</option>
-                                                            <?php foreach ($professores as $professor): ?>
-                                                                <option value="<?= $professor['id'] ?>"><?= esc($professor['nome']) ?></option>
-                                                            <?php endforeach; ?>
-                                                        </select>
-                                                    </div>
-                                                </div>
+                                        <label for="filtroCurso">Curso</label>
+                                        <select class="form-control" id="filtroCurso" name="cursos[]">
+                                            <option value="">Selecione um curso</option>
+                                            <?php foreach ($cursos as $curso): ?>
+                                                <option value="<?= $curso['id'] ?>"><?= esc($curso['nome']) ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
 
-                                                <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <label for="filtroAmbiente">Ambiente</label>
-                                                        <select class="form-control select2-single" id="filtroAmbiente" name="ambientes[]">
-                                                            <option value="">Selecione um ambiente</option>
-                                                            <?php foreach ($ambientes as $ambiente): ?>
-                                                                <option value="<?= $ambiente['id'] ?>"><?= esc($ambiente['nome']) ?></option>
-                                                            <?php endforeach; ?>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                    </div>
 
-                                            <div class="form-group d-flex justify-content-start mt-4">
-                                                <button type="button" id="btnFiltrar" class="btn btn-primary me-2">
-                                                    <i class="mdi mdi-eye-outline me-1"></i>Visualizar Horários
-                                                </button>
-                                                <button type="button" id="btnLimpar" class="btn btn-secondary me-2">
-                                                    <i class="mdi mdi-filter-remove me-1"></i>Limpar Filtros
-                                                </button>
-                                            </div>
-                                        </form>
+                                    <div class="col-md-3 form-group">
+
+                                        <label for="filtroTurma">Turma</label>
+                                        <select class="form-control" id="filtroTurma" name="turmas[]" disabled>
+                                            <option value="">Selecione um curso primeiro</option>
+                                        </select>
+
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 form-group">
+                                            <label for="filtroProfessor">Professor</label>
+                                            <select class="form-control" id="filtroProfessor" name="professores[]">
+                                                <option value="">Selecione um professor</option>
+                                                <?php foreach ($professores as $professor): ?>
+                                                    <option value="<?= $professor['id'] ?>"><?= esc($professor['nome']) ?></option>
+                                                <?php endforeach; ?>
+                                            </select>
+                                    </div>
+                                    <div class="col-md-3 form-group">
+                                            <label for="filtroAmbiente">Ambiente</label>
+                                            <select class="form-control" id="filtroAmbiente" name="ambientes[]">
+                                                <option value="">Selecione um ambiente</option>
+                                                <?php foreach ($ambientes as $ambiente): ?>
+                                                    <option value="<?= $ambiente['id'] ?>"><?= esc($ambiente['nome']) ?></option>
+                                                <?php endforeach; ?>
+                                            </select>
+                                    </div>
+                                    <div class="form-group d-flex col-md-3 mt-4 flex-wrap gap-2">
+                                        <button type="button" id="btnFiltrar" class="btn btn-primary me-2">
+                                            <i class="mdi mdi-eye-outline me-1"></i>Visualizar Horários
+                                        </button>
+                                        <button type="button" id="btnLimpar" class="btn btn-secondary me-2">
+                                            <i class="mdi mdi-filter-remove me-1"></i>Limpar Filtros
+                                        </button>
                                     </div>
                                 </div>
-                            </div>
+
+                            </form>
                         </div>
                     </div>
+
+
                 </div>
-                <div class="tab-pane fade" id="pane-resultados" role="tabpanel">
-                    <div id="aba_resultados" class="tab-pane">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-10 col-md-12" id="resultadosContainer">
-                                <div class="card bg-dark text-white">
-                                    <div class="card-body">
-                                        <p class="text-center text-muted">
-                                            Nenhum horário para exibir. Selecione os filtros e clique em "Visualizar Horários".
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="tab-pane fade row justify-content-center col-lg-10 col-md-12 rounded" id="resultadosContainer" role="tabpanel">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="col-auto">
+                            <h4 id="tile_resultados" class="card-title">Resultados</h4>
                         </div>
+                    </div>
+                    <div class="card text-white card-body">
+                        <p class="text-center text-muted">
+                            Nenhum horário para exibir. Selecione os filtros e clique em "Visualizar Horários".
+                        </p>
+                    </div>
+                    <div id="carousel_horarios" class="carousel slide">
+                        <div class="carousel-inner" id="carousel_dias"></div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel_horarios" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carousel_horarios" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -221,73 +221,166 @@ $versaoVigente  = $versoesModel->where('vigente', '1')->first();
                 return h * 60 + m;
             }
 
-            function renderTimetable(data, tipo) {
+            function renderTimetable(data, tipoFiltro, filtro) {
+                const filtrosAtivos = tipoFiltro.split('/');
                 const resultadosContainer = $('#resultadosContainer');
                 resultadosContainer.empty();
 
+                const botaoVoltar = `
+                    <div class="d-flex justify-content-end">
+                        <button id="btn-voltar-filtro" type="button" class="btn btn-primary me-2 mb-4">
+                            <i class="mdi mdi-arrow-left"></i> Voltar para filtros
+                        </button>
+                    </div>
+                `;
+                resultadosContainer.append(botaoVoltar);
+
                 if (!data || data.length === 0) {
-                    const emptyState = `<div class="card bg-dark text-white"><div class="card-body"><p class="text-center text-muted">Nenhum resultado encontrado.</p></div></div>`;
-                    resultadosContainer.html(emptyState);
+                    resultadosContainer.html(`
+                        <div class="card text-white">
+                            <div class="card-body">
+                                <p class="text-center text-muted">Nenhum resultado encontrado.</p>
+                            </div>
+                        </div>
+                    `);
                     return;
                 }
 
-                const tables = {};
-                data.forEach(item => {
-                    let groupKey = `${item.curso || ''} - ${item.turma || ''}`;
-                    if (!tables[groupKey]) tables[groupKey] = {};
-                    const dia = Number(item.dia_semana) || 0;
-                    if (!tables[groupKey][dia]) tables[groupKey][dia] = {};
-                    tables[groupKey][dia][item.hora_inicio] = {
-                        disciplina: item.disciplina || '',
-                        professor: item.professor || '',
-                        ambiente: item.ambiente || '',
-                        destaque: Number(item.destaque) || 0
-                    };
-                });
+                // =============== 1. Definir agrupamento ===============
+                let agrupamento = "none";
 
-                for (const groupKey in tables) {
-                    const groupData = tables[groupKey];
-                    let timeSlots = new Set();
-                    Object.values(groupData).forEach(day => {
-                        Object.keys(day).forEach(time => timeSlots.add(time));
-                    });
-                    const sortedTimeSlots = Array.from(timeSlots).sort((a, b) => timeToMinutes(a) - timeToMinutes(b));
-                    const weekDays = {
-                        1: 'Segunda',
-                        2: 'Terça',
-                        3: 'Quarta',
-                        4: 'Quinta',
-                        5: 'Sexta'
-                    };
-
-                    let tableHtml = `<div class="card mb-4"><div class="card-body"><div class="timetable-caption">${groupKey}</div><div class="table-responsive"><table class="table table-bordered timetable"><thead><tr><th class="time-col">Horário</th><th>${weekDays[1]}</th><th>${weekDays[2]}</th><th>${weekDays[3]}</th><th>${weekDays[4]}</th><th>${weekDays[5]}</th></tr></thead><tbody>`;
-                    let lastTurno = '';
-                    sortedTimeSlots.forEach(time => {
-                        const hora = parseInt(String(time).substring(0, 2)) || 0;
-                        let turnoAtual = (hora < 12) ? 'MANHÃ' : (hora < 18) ? 'TARDE' : 'NOITE';
-                        if (turnoAtual !== lastTurno) {
-                            tableHtml += `<tr class="period-header"><th colspan="6">${turnoAtual}</th></tr>`;
-                            lastTurno = turnoAtual;
-                        }
-                        tableHtml += `<tr><td class="time-col">${time}</td>`;
-                        for (let day = 1; day <= 5; day++) {
-                            const cellData = groupData[day] ? groupData[day][time] : null;
-                            if (cellData) {
-
-                                let detail1 = `<i class="mdi mdi-account"></i> ${cellData.professor || '—'}`;
-                                let detail2 = `<b><i class="mdi mdi-map-marker"></i> ${cellData.ambiente || '—'}</b>`;
-
-                                tableHtml += `<td class="${cellData.destaque == 1 ? 'table-danger' : ''}"><span class="discipline"><i class="mdi mdi-book-open-variant"></i> ${cellData.disciplina}</span><em class="details">${detail1}<br>${detail2}</em></td>`;
-                            } else {
-                                tableHtml += '<td>—</td>';
-                            }
-                        }
-                        tableHtml += '</tr>';
-                    });
-                    tableHtml += `</tbody></table></div></div></div>`;
-                    resultadosContainer.append(tableHtml);
+                if (tipoFiltro === "curso" && (!filtro.turmas || filtro.turmas.length === 0)) {
+                    agrupamento = "turma"; // curso sem turma → 1 carrossel por turma
                 }
+
+                // =============== 2. Agrupar dados ===============
+                let grupos = {};
+
+                if (agrupamento === "turma") {
+                    data.forEach(item => {
+                        let key = item.turma || "SemTurma";
+                        if (!grupos[key]) grupos[key] = [];
+                        grupos[key].push(item);
+                    });
+                } else {
+                    grupos["unico"] = data;
+                }
+
+                // =============== 3. Gerar carrosséis ===============
+                Object.keys(grupos).forEach((grupoKey) => {
+                    let dadosGrupo = grupos[grupoKey];
+                    let carouselId = "carousel_" + grupoKey.replace(/\s+/g, '_');
+
+                    // ----- Título -----
+                    let tituloCarrossel = "";
+                    if (tipoFiltro === "professor") tituloCarrossel = "Professor: " + dadosGrupo[0].professor;
+                    if (tipoFiltro === "ambiente") tituloCarrossel = "Ambiente: " + dadosGrupo[0].ambiente;
+
+                    if (tipoFiltro === "curso") {
+                        if (agrupamento === "turma") {
+                            tituloCarrossel = `Curso: ${dadosGrupo[0].curso} — Turma: ${grupoKey}`;
+                        } else {
+                            tituloCarrossel = `Curso: ${dadosGrupo[0].curso}`;
+                        }
+                    }
+
+                    if (tipoFiltro === "professor" && filtro.cursos?.length > 0)
+                        tituloCarrossel += ` — Curso: ${dadosGrupo[0].curso}`;
+
+                    if (tipoFiltro === "ambiente" && filtro.cursos?.length > 0)
+                        tituloCarrossel += ` — Curso: ${dadosGrupo[0].curso}`;
+
+                    if (tipoFiltro === "curso/professor") tituloCarrossel = `Curso e Professor`;
+                    if (tipoFiltro === "curso/ambiente") tituloCarrossel = `Curso e Ambiente`;
+                    if (tipoFiltro === "curso/turma") tituloCarrossel = `Curso e Turma`;
+
+                    // ----- Início do bloco -----
+                    let blocoHTML = `
+                        <div class="card text-white mb-4">
+                            <div class="card-body">
+                                <h3 class="text-center mb-3">${tituloCarrossel}</h3>
+
+                                <div id="${carouselId}" class="carousel slide">
+                                    <div class="carousel-inner">
+                    `;
+
+                    // =============== 4. Gerar slides (Seg → Sex) ===============
+                    const diasSemana = {
+                        1: "Segunda",
+                        2: "Terça",
+                        3: "Quarta",
+                        4: "Quinta",
+                        5: "Sexta"
+                    };
+
+                    for (let dia = 1; dia <= 5; dia++) {
+                        let aulasDia = dadosGrupo.filter(x => Number(x.dia_semana) === dia);
+                        aulasDia.sort((a, b) => timeToMinutes(a.hora_inicio) - timeToMinutes(b.hora_inicio));
+                        let activeClass = dia === 1 ? "active" : "";
+
+                        blocoHTML += `
+                            <div class="carousel-item ${activeClass}">
+                                <h4 class="text-center mb-3">${diasSemana[dia]}</h4>
+                                <div class="lista-aulas">
+                        `;
+
+                        if (aulasDia.length === 0) {
+                            blocoHTML += `<p class="text-center text-muted">Nenhuma aula neste dia.</p>`;
+                        } else {
+                            aulasDia.forEach(aula => {
+                                const destaque = campo => (filtrosAtivos.includes(campo) ? "fw-bold text-info" : "");
+
+                                blocoHTML += `
+                                    <div class="d-flex justify-content-center">
+                                        <div class="aula-item mb-2 p-2 border rounded d-flex align-items-stretch">
+                                            <div class="me-3 pe-2 text-nowrap border-end d-flex align-items-center">
+                                                <i class="mdi mdi-clock"></i> ${aula.hora_inicio}
+                                            </div>
+                                            <div class="d-flex flex-column text-center flex-grow-1 justify-content-center">
+                                                <div class="${destaque('disciplina')}"><i class="mdi mdi-book-open-variant"></i> ${aula.disciplina}</div>
+                                                <div class="${destaque('professor')}"><i class="mdi mdi-account"></i> ${aula.professor}</div>
+                                                <div class="${destaque('turma')}"><i class="mdi mdi-account-group"></i> ${aula.turma}</div>
+                                                <div class="${destaque('ambiente')}"><i class="mdi mdi-map-marker"></i> ${aula.ambiente}</div>
+                                                <div class="${destaque('curso')}">Curso: ${aula.curso}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                `;
+                            });
+                        }
+
+                        blocoHTML += `
+                                </div>
+                            </div>
+                        `;
+                    }
+
+                    // =============== 5. Adicionar botões condicionalmente ===============
+                    blocoHTML += `
+                                    </div>
+                                    ${dadosGrupo.length > 0 ? `
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#${carouselId}" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon"></span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#${carouselId}" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon"></span>
+                                        </button>
+                                    ` : ''}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+
+                    resultadosContainer.append(blocoHTML);
+                });
             }
+
+
+            $('#resultadosContainer').on('click', '#btn-voltar-filtro', function() {
+                const tab = new bootstrap.Tab(document.querySelector('#tab-filtros'));
+                tab.show();
+            });
+
 
             $('#btnFiltrar').on('click', function() {
                 var loading = $.toast({
@@ -345,9 +438,9 @@ $versaoVigente  = $versoesModel->where('vigente', '1')->first();
                     success: function(response) {
                         $.toast().reset('all');
                         if (response.success) {
-                            renderTimetable(response.data, dadosFiltro.tipo);
+                            renderTimetable(response.data, dadosFiltro.tipo, dadosFiltro);
                         } else {
-                            renderTimetable([]);
+                            renderTimetable([], dadosFiltro.tipo, dadosFiltro);
                         }
 
                         const tab = new bootstrap.Tab(document.querySelector('#tab-resultados'));
@@ -355,7 +448,7 @@ $versaoVigente  = $versoesModel->where('vigente', '1')->first();
                     },
                     error: function() {
                         $.toast().reset('all');
-                        renderTimetable([]);
+                        renderTimetable([], dadosFiltro.tipo, dadosFiltro);
                         $.toast({
                             heading: 'Erro',
                             text: 'Não foi possível carregar os dados.',
@@ -371,16 +464,21 @@ $versaoVigente  = $versoesModel->where('vigente', '1')->first();
             $('#btnLimpar').on('click', function() {
                 $('.select2-single').val(null).trigger('change');
                 const emptyState = `
-            <div class="card bg-dark text-white">
+                <div class="col-auto d-flex justify-content-end">
+                    <button id="btn-voltar-filtro" type="button" class="btn btn-primary me-2 mb-4">Voltar para filtros</button>
+                </div>
                 <div class="card-body">
                     <p class="text-center text-muted">
                         Nenhum horário para exibir. Selecione os filtros e clique em "Visualizar Horários".
                     </p>
                 </div>
-            </div>`;
+            `;
                 $('#resultadosContainer').html(emptyState);
             });
+            // Os botes de passa os slides do carrossel so desapareciam quando clicava no botao de limpar filtros, entao ao iniciar a pagina limpa filtros :-)
+            $('#btnLimpar').trigger('click');
         });
+        
     </script>
 </body>
 
