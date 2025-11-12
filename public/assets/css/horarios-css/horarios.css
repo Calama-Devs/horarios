@@ -1,0 +1,110 @@
+/* =========================================================
+   ESCOPO PRINCIPAL
+   Tudo dentro de #horarios-wrapper é isolado do restante
+   ========================================================= */
+#horarios-wrapper {
+   display: flex;
+   padding-top: 0px !important;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+#horarios-wrapper .page-header {}
+
+#horarios-wrapper .page-title {}
+
+#horarios-wrapper .page-header img {}
+
+/* =========================================================
+   ÁREA DE BOTÕES
+   ========================================================= */
+
+
+
+/* =========================================================
+   ÁREA DE FILTROS
+   ========================================================= */
+#horarios-wrapper #formFiltros {}
+
+#horarios-wrapper .form-group {}
+
+#horarios-wrapper label {}
+
+#horarios-wrapper .select2-container {}
+
+/* Botões */
+#horarios-wrapper #btnFiltrar {}
+
+#horarios-wrapper #btnLimpar {}
+
+/* =========================================================
+   CARTÕES / ESTRUTURA
+   ========================================================= */
+#horarios-wrapper .card {
+   border: 0px;
+}
+
+#horarios-wrapper .card-body {}
+
+#horarios-wrapper .card-title {}
+
+/* =========================================================
+   ÁREA DE RESULTADOS
+   ========================================================= */
+#horarios-wrapper #resultadosContainer {
+   background: #191c24;
+}
+
+#horarios-wrapper .bg-carousel {
+   background: #191c24;
+}
+
+#horarios-wrapper .timetable-caption {}
+
+#horarios-wrapper .timetable .time-col {}
+
+#horarios-wrapper .timetable th,
+#horarios-wrapper .timetable td {}
+
+/* Células destacadas */
+
+
+/* Detalhes dentro da célula */
+#horarios-wrapper .discipline {}
+
+#horarios-wrapper .details {}
+
+/* Period header (MANHÃ / TARDE / NOITE) */
+#horarios-wrapper .period-header {}
+
+/* =========================================================
+   RODAPÉ
+   ========================================================= */
+#horarios-wrapper .footer {}
+
+/* =========================================================
+   AJUSTES DE RESPONSIVIDADE
+   ========================================================= */
+@media (max-width: 992px) {
+
+   #horarios-wrapper .page-title {}
+
+   #horarios-wrapper .card {}
+}
+
+@media (max-width: 768px) {
+
+   #horarios-wrapper .page-header {}
+
+   #horarios-wrapper #resultadosContainer {}
+}
+
+@media (max-width: 480px) {
+
+   #horarios-wrapper .page-title {}
+
+   #horarios-wrapper th,
+   #horarios-wrapper td {}
+}
